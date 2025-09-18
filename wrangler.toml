@@ -1,0 +1,10 @@
+name = "rudy-cv"
+main = "src/worker.js"
+compatibility_date = "2025-09-17"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"   # exposes env.ASSETS.fetch(request)
+
+[triggers]
+email = true
