@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "isekaiexpresscode",
+	"name": "twilight-firefly-61cd",
 	"main": "src/index.js",
 	"compatibility_date": "2025-09-17",
 	"compatibility_flags": [
