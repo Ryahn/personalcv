@@ -1,228 +1,329 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rudy — Online CV</title>
-  <meta name="description" content="Concise, modern online CV with skills, experience, and project links.">
-  <meta property="og:title" content="Rudy — Online CV">
-  <meta property="og:description" content="Concise, modern online CV with skills, experience, and project links.">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0d6efd">
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root { --cv-accent: #0d6efd; }
-    body { background: #0b0f16; color: #e6edf3; }
-    .card { background: #111827; border: 1px solid #1f2937; }
-	.navbar-brand { color: white; }
-	.list-unstyled { color: white; }
-	.h5 { color: white; }
-	.list-compact { color: white; }
-    .text-accent { color: var(--cv-accent) !important; }
-    .link-faint { color: #9aa4b2; }
-    .link-faint:hover { color: #e6edf3; }
-    .nav-link { color: #9aa4b2 !important; }
-    .nav-link.active, .nav-link:hover { color: #e6edf3 !important; }
-    .avatar { width: 88px; height: 88px; border-radius: 16px; object-fit: cover; }
-    .tag { background: #0f172a; border: 1px solid #233049; border-radius: 999px; padding: .35rem .65rem; }
-    .muted { color: #9aa4b2; }
-    .year-pill { background: rgba(13,110,253,.15); color: #b7d1ff; }
-    .section-title { letter-spacing: .02em; }
-    .shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,.3); }
-    a { text-decoration: none; }
-    .list-compact li { margin-bottom: .35rem; }
-    .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: .72rem; color: #8ea7ff; }
-  </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rudy — Online CV</title>
+	<meta name="description" content="Concise, modern online CV with skills, experience, and project links.">
+	<meta property="og:title" content="Rudy — Online CV">
+	<meta property="og:description" content="Concise, modern online CV with skills, experience, and project links.">
+	<meta property="og:type" content="website">
+	<meta name="theme-color" content="#0d6efd">
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Icons -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<style>
+		:root {
+			--cv-accent: #0d6efd;
+		}
+
+		body {
+			background: #0b0f16;
+			color: #e6edf3;
+		}
+
+		.card {
+			background: #111827;
+			border: 1px solid #1f2937;
+		}
+
+		.navbar-brand {
+			color: white;
+		}
+
+		.list-unstyled {
+			color: white;
+		}
+
+		.h5 {
+			color: white;
+		}
+
+		.list-compact {
+			color: white;
+		}
+
+		.text-accent {
+			color: var(--cv-accent) !important;
+		}
+
+		.link-faint {
+			color: #9aa4b2;
+		}
+
+		.link-faint:hover {
+			color: #e6edf3;
+		}
+
+		.nav-link {
+			color: #9aa4b2 !important;
+		}
+
+		.nav-link.active,
+		.nav-link:hover {
+			color: #e6edf3 !important;
+		}
+
+		.avatar {
+			width: 88px;
+			height: 88px;
+			border-radius: 16px;
+			object-fit: cover;
+		}
+
+		.tag {
+			background: #0f172a;
+			border: 1px solid #233049;
+			border-radius: 999px;
+			padding: .35rem .65rem;
+		}
+
+		.muted {
+			color: #9aa4b2;
+		}
+
+		.year-pill {
+			background: rgba(13, 110, 253, .15);
+			color: #b7d1ff;
+		}
+
+		.section-title {
+			letter-spacing: .02em;
+		}
+
+		.shadow-soft {
+			box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.list-compact li {
+			margin-bottom: .35rem;
+		}
+
+		.kicker {
+			text-transform: uppercase;
+			letter-spacing: .12em;
+			font-size: .72rem;
+			color: #8ea7ff;
+		}
+	</style>
 </head>
+
 <body>
-  <header class="border-bottom border-secondary-subtle">
-    <nav class="navbar navbar-expand-md container py-3">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Logo" class="avatar">
-        <div>
-          <div class="fw-semibold">Rudy</div>
-          <div class="small text-secondary">Amateur Music AI Producer • Developer • Ops</div>
-        </div>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto gap-2">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+	<header class="border-bottom border-secondary-subtle">
+		<nav class="navbar navbar-expand-md container py-3">
+			<a class="navbar-brand d-flex align-items-center gap-2" href="#">
+				<img src="https://avatars.githubusercontent.com/u/0?v=4" alt="Logo" class="avatar">
+				<div>
+					<div class="fw-semibold">Rudy</div>
+					<div class="small text-secondary">Amateur Music AI Producer • Developer • Ops</div>
+				</div>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div id="nav" class="collapse navbar-collapse">
+				<ul class="navbar-nav ms-auto gap-2">
+					<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+					<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
-  <main class="container py-5">
-    <!-- Intro / About -->
-    <section id="about" class="mb-5">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-8">
-          <h1 class="display-5 fw-semibold mb-2">Building practical systems with a bias for shipping.</h1>
-          <p class="lead muted">Full‑stack tinkerer who blends Node.js backends, PHP tooling, and DevOps pragmatism. I run production for small apps, automate the boring parts, and keep costs sane. On the creative side, I produce AI‑assisted music projects.
-          </p>
-          <div class="d-flex flex-wrap gap-2 mt-3">
-            <span class="tag"><i class="bi bi-geo-alt"></i> USA</span>
-            <a class="tag link-faint" href="#projects"><i class="bi bi-stars"></i> Featured work</a>
-            <a class="tag link-faint" href="#contact"><i class="bi bi-envelope"></i> Hire/contact</a>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card shadow-soft">
-            <div class="card-body">
-              <div class="kicker mb-2">At a glance</div>
-              <ul class="list-unstyled list-compact">
-                <li><i class="bi bi-check2-circle text-accent"></i> Backend: Node.js, PHP, MySQL</li>
-                <li><i class="bi bi-check2-circle text-accent"></i> Infra: Nginx, Docker, LXD, HAProxy</li>
-                <li><i class="bi bi-check2-circle text-accent"></i> Bots: Discord.js, REST APIs</li>
-                <li><i class="bi bi-check2-circle text-accent"></i> Music: Suno AI workflows</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<main class="container py-5">
+		<!-- Intro / About -->
+		<section id="about" class="mb-5">
+			<div class="row g-4 align-items-center">
+				<div class="col-lg-8">
+					<h1 class="display-5 fw-semibold mb-2">Building practical systems with a bias for shipping.</h1>
+					<p class="lead muted">A full-stack tinkerer who combines Node.js backends, PHP tools, and practical
+						DevOps. I run production for small apps, automate the boring parts, and keep costs down. I make
+						music projects with the help of AI on the creative side.
+					</p>
+					<div class="d-flex flex-wrap gap-2 mt-3">
+						<span class="tag"><i class="bi bi-geo-alt"></i> Madison, TN,USA</span>
+						<a class="tag link-faint" href="#projects"><i class="bi bi-stars"></i> Featured work</a>
+						<a class="tag link-faint" href="#contact"><i class="bi bi-envelope"></i> Hire/contact</a>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="card shadow-soft">
+						<div class="card-body">
+							<div class="kicker mb-2">At a glance</div>
+							<ul class="list-unstyled list-compact">
+								<li><i class="bi bi-check2-circle text-accent"></i> Backend: Node.js, PHP, MySQL</li>
+								<li><i class="bi bi-check2-circle text-accent"></i> Infra: Nginx, Docker, LXD, Caddy
+								</li>
+								<li><i class="bi bi-check2-circle text-accent"></i> Bots: Discord.js, REST APIs</li>
+								<li><i class="bi bi-check2-circle text-accent"></i> Music: Suno AI workflows</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Skills -->
-    <section id="skills" class="mb-5">
-      <h2 class="section-title h3 mb-3">Skills</h2>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="kicker mb-2">Languages & Frameworks</div>
-              <ul class="list-unstyled list-compact">
-                <li>Node.js <span class="badge year-pill ms-2"><span data-years-from="2018"></span> yrs</span></li>
-                <li>PHP (Laravel) <span class="badge year-pill ms-2"><span data-years-from="2014"></span> yrs</span></li>
-                <li>JavaScript (Frontend) <span class="badge year-pill ms-2"><span data-years-from="2012"></span> yrs</span></li>
-                <li>SQL (MySQL) <span class="badge year-pill ms-2"><span data-years-from="2010"></span> yrs</span></li>
-                <li>Bash / Shell <span class="badge year-pill ms-2"><span data-years-from="2011"></span> yrs</span></li>
-              </ul>
-              <div class="small muted">Edit start years in the HTML; years are calculated automatically.</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100">
-            <div class="card-body">
-              <div class="kicker mb-2">Tools & Platforms</div>
-              <ul class="list-unstyled list-compact">
-                <li>Docker / LXD</li>
-                <li>Nginx, HAProxy</li>
-                <li>Redis, pm2</li>
-                <li>Git, CI basics</li>
-                <li>Discord.js, REST APIs</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Skills -->
+		<section id="skills" class="mb-5">
+			<h2 class="section-title h3 mb-3">Skills</h2>
+			<div class="row g-3">
+				<div class="col-md-6">
+					<div class="card h-100">
+						<div class="card-body">
+							<div class="kicker mb-2">Languages & Frameworks</div>
+							<ul class="list-unstyled list-compact">
+								<li>Node.js <span class="badge year-pill ms-2"><span data-years-from="2015"></span>
+										yrs</span></li>
+								<li>PHP <span class="badge year-pill ms-2"><span data-years-from="2010"></span>
+										yrs</span></li>
+								<li>Laravel <span class="badge year-pill ms-2"><span data-years-from="2020"></span>
+										yrs</span></li>
+								<li>JavaScript <span class="badge year-pill ms-2"><span data-years-from="2012"></span>
+										yrs</span></li>
+								<li>MySQL <span class="badge year-pill ms-2"><span data-years-from="2010"></span>
+										yrs</span></li>
+								<li>Bash / Shell <span class="badge year-pill ms-2"><span data-years-from="2011"></span>
+										yrs</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="card h-100">
+						<div class="card-body">
+							<div class="kicker mb-2">Tools & Platforms</div>
+							<ul class="list-unstyled list-compact">
+								<li>Docker / LXD</li>
+								<li>Nginx, Caddy</li>
+								<li>Redis, pm2</li>
+								<li>Git, CI basics</li>
+								<li>Discord.js, REST APIs</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Projects -->
-    <section id="projects" class="mb-5">
-      <h2 class="section-title h3 mb-3">Selected Projects</h2>
-      <div class="row g-3">
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 mb-1">IsekaiExpress Bot</h3>
-              <p class="muted small mb-3">Discord bot with custom command system, MySQL backend, role tools, and moderation workflows.</p>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-sm btn-primary" href="https://github.com/Ryahn/IsekaiExpress" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
-                <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 mb-1">Rule7 Site</h3>
-              <p class="muted small mb-3">Custom PHP/JS snippets, caching, and templating for a content‑rich site with dynamic components.</p>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
-                <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="h5 mb-1">Eternal Bonds (AI Music)</h3>
-              <p class="muted small mb-3">Suno‑based album series with structured prompts, consistent meta‑tags, and release‑ready lyrics.</p>
-              <div class="mt-auto d-flex gap-2">
-                <a class="btn btn-sm btn-primary" href="#" target="_blank" rel="noopener"><i class="bi bi-music-note-list"></i> Overview</a>
-                <a class="btn btn-sm btn-outline-light" href="#" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Samples</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mt-3">
-        <a class="link-faint" href="https://github.com/Ryahn?tab=repositories" target="_blank" rel="noopener"><i class="bi bi-github"></i> More on GitHub</a>
-      </div>
-    </section>
+		<!-- Projects -->
+		<section id="projects" class="mb-5">
+			<h2 class="section-title h3 mb-3">Selected Projects</h2>
+			<div class="row g-3">
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="card-body d-flex flex-column">
+							<h3 class="h5 mb-1">IsekaiExpress Bot</h3>
+							<p class="muted small mb-3">Custom discord bot for a private server.</p>
+							<div class="mt-auto d-flex gap-2">
+								<a class="btn btn-sm btn-primary" href="https://github.com/Ryahn/IsekaiExpress"
+									target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="card-body d-flex flex-column">
+							<h3 class="h5 mb-1">NIPSBot</h3>
+							<p class="muted small mb-3">Custom discord bot for a private HSH server.</p>
+							<div class="mt-auto d-flex gap-2">
+								<a class="btn btn-sm btn-primary" href="https://github.com/Ryahn/NIPSBot"
+									target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="card-body d-flex flex-column">
+							<h3 class="h5 mb-1">UPDATED: ShareX server</h3>
+							<p class="muted small mb-3">UPDATED: ShareX server for uploading files (images etc.) written
+								in NodeJS</p>
+							<div class="mt-auto d-flex gap-2">
+								<a class="btn btn-sm btn-primary" href="https://github.com/Ryahn/node-sharex-server"
+									target="_blank" rel="noopener"><i class="bi bi-github"></i> Repo</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="card-body d-flex flex-column">
+							<h3 class="h5 mb-1">Various Laravel and PHP Projects</h3>
+							<p class="muted small mb-3">All projects are private or under NDA.</p>
+							<div class="mt-auto d-flex gap-2">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="mt-3">
+				<a class="link-faint" href="https://github.com/Ryahn?tab=repositories" target="_blank" rel="noopener"><i
+						class="bi bi-github"></i> More on GitHub</a>
+			</div>
+		</section>
 
-    <!-- Quick Experience (optional) -->
-    <section id="experience" class="mb-5">
-      <h2 class="section-title h3 mb-3">Experience</h2>
-      <div class="card">
-        <div class="card-body">
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <h3 class="h5 mb-1">Independent Developer / Ops</h3>
-              <div class="muted small mb-2">Freelance • Remote</div>
-              <ul class="list-compact">
-                <li>Designed and deployed small production stacks with Nginx, HAProxy, Docker/LXD.</li>
-                <li>Built Discord bots with MySQL persistence and role automation.</li>
-                <li>Implemented CI basics, backups, and monitoring for client projects.</li>
-              </ul>
-            </div>
-            <div class="muted small">2015 — Present</div>
-          </div>
-        </div>
-      </div>
-    </section>
+		<!-- Quick Experience (optional) -->
+		<section id="experience" class="mb-5">
+			<h2 class="section-title h3 mb-3">Experience</h2>
+			<div class="card">
+				<div class="card-body">
+					<div class="d-flex flex-column flex-md-row justify-content-between">
+						<div>
+							<h3 class="h5 mb-1">Independent Developer / Ops</h3>
+							<div class="muted small mb-2">Freelance • Remote</div>
+							<ul class="list-compact">
+								<li>Built and set up small production stacks using Nginx, Caddy, Docker, and LXD. This
+									is what it looks like:
+								<li> Made Discord bots that can save data in MySQL and automate roles.
+								<li> Set up CI basics, backups, and monitoring for client projects.
+							</ul>
+						</div>
+						<div class="muted small">2020 — Present</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Contact -->
-    <section id="contact" class="mb-5">
-      <h2 class="section-title h3 mb-3">Contact</h2>
-      <div class="card">
-        <div class="card-body d-flex flex-wrap gap-3 align-items-center">
-          <a class="btn btn-outline-light" href="mailto:hello@example.com"><i class="bi bi-envelope-fill"></i> hello@example.com</a>
-          <a class="btn btn-outline-light" href="https://github.com/Ryahn" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-          <a class="btn btn-outline-light" href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
-        </div>
-      </div>
-    </section>
+		<!-- Contact -->
+		<section id="contact" class="mb-5">
+			<h2 class="section-title h3 mb-3">Contact</h2>
+			<div class="card">
+				<div class="card-body d-flex flex-wrap gap-3 align-items-center">
+					<a class="btn btn-outline-light" href="mailto:ryahn@isekaiexpresscode.xyz"><i class="bi bi-envelope-fill"></i>
+						ryahn@isekaiexpresscode.xyz</a>
+					<a class="btn btn-outline-light" href="https://github.com/Ryahn" target="_blank" rel="noopener"><i
+							class="bi bi-github"></i> GitHub</a>
+				</div>
+			</div>
+		</section>
 
-    <footer class="py-4 text-center muted small">
-      © <span id="year"></span> Rudy. All rights reserved.
-    </footer>
-  </main>
+		<footer class="py-4 text-center muted small">
+			© <span id="year"></span> Rudy. All rights reserved.
+		</footer>
+	</main>
 
-  <script>
-    // Compute years of experience from a given start year.
-    (function(){
-      const now = new Date().getFullYear();
-      document.querySelectorAll('[data-years-from]').forEach(el => {
-        const start = parseInt(el.getAttribute('data-years-from'), 10);
-        const years = Math.max(0, now - start);
-        el.textContent = years.toString();
-      });
-      document.getElementById('year').textContent = now;
-    })();
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// Compute years of experience from a given start year.
+		(function () {
+			const now = new Date().getFullYear();
+			document.querySelectorAll('[data-years-from]').forEach(el => {
+				const start = parseInt(el.getAttribute('data-years-from'), 10);
+				const years = Math.max(0, now - start);
+				el.textContent = years.toString();
+			});
+			document.getElementById('year').textContent = now;
+		})();
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
